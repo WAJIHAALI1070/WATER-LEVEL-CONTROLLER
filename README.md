@@ -16,9 +16,11 @@ The counter starts when the suction pump is powered on. So the decade counter st
 **1. 555 TIMER IC:** 555 timer starts generating the pulse, This pulse is sent to the 4026 IC’s clock. 555 timer is powered by a DC source, threshold and the DC pin is connected to the 470K ohm resistor and then the 555 timer is connected to ground. 
 
  **2. 4026 IC:**  The 555 timer clock signal is passed through a NOR gate that further passes on to the 4026 IC. It is responsible for displaying the timer i.e digits on the seven segment display. 4026 display initiates a mod counter and that will proceed upto 9 and on reaching 9 and the zero it will add plus on into the next 7 segment display, hence 4 7 segment displays are used for 4 4026 ICs and in this way the decade counter works.
- ![image](https://github.com/WAJIHAALI1070/WATER-LEVEL-CONTROLLER/assets/121358629/7d8fd23d-5353-4a9f-a83f-9648a648183a)
+ 
+![image](https://github.com/WAJIHAALI1070/WATER-LEVEL-CONTROLLER/assets/121358629/7d8fd23d-5353-4a9f-a83f-9648a648183a)
 
 A typical 555 timer can be seen as follows:
+
 ![image](https://github.com/WAJIHAALI1070/WATER-LEVEL-CONTROLLER/assets/121358629/138153a6-2379-4ae3-99eb-93a0a4206212)
 
 
@@ -31,8 +33,10 @@ and would give the logic 1 when submerged in water so that the level to level ti
  4. 7 segment display to display the level number
  5. The 74LS90 is a simple counter (IC 7490), i.e. it can count from 0 to 9 cyclically in its natural mode. It counts the input pulses and the output is received as a 4-bit binary number through pins A, B, C and D. The binary output is reset to 0000 at every tenth pulse and count starts from 0 again.
  6. 7447 which is also an equivalent BCD to 7 segment decoder
+
     ![image](https://github.com/WAJIHAALI1070/WATER-LEVEL-CONTROLLER/assets/121358629/cae0724b-7741-4146-99cd-e242e0b49778)
 
 # MEMPORY STORAGE
 The memory storage will store the time of level to level timer and will keep displaying the output when the clock signal is turned off of each level. The memory storage will help to store the level to level timer and store all the times of various levels. Now when the DC power is turned off, all the data is lost and the register is reset. The memory storage will be possible using the 8 bit shift register or flip flops using latches or simple registers, basically anything that can store the value of timers will be the memory block of the system. We used 74198 IC which is a shift register. Synchronous parallel loading is accomplished by applying the 8- bits of data and taking both mode control inputs,S0 and S1 high. The data is loaded into the associated flip flop and the outputs after the positive transition of clock input. During loading serial data flow is inhibited. 
+
 ![image](https://github.com/WAJIHAALI1070/WATER-LEVEL-CONTROLLER/assets/121358629/4a79a01d-8ca4-4761-9cb7-51a7b38d6046)
